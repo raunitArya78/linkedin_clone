@@ -47,7 +47,7 @@ const Home = () => {
 
     const handleLogout = async () => {
       try {
-        await axios.get("http://localhost:5000/logout", {
+        await axios.get(`${import.meta.env.VITE_API_URL}/logout`, {
           withCredentials: true,
         });
         setShowSignoutAlert(true);
@@ -64,7 +64,7 @@ const Home = () => {
 
     useEffect(() => {
     axios.defaults.withCredentials = true; // ensure cookies are sent
-    axios.get("http://localhost:5000/verify")
+    axios.get(`${import.meta.env.VITE_API_URL}/verify`)
       .then((res) => {
         if (res.data.status) {
           setUsername(res.data.user.name); // 👈 Store name in state

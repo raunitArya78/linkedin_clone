@@ -18,7 +18,7 @@ const Login = () => {
 
     useEffect(() => {
       axios
-        .get("http://localhost:5000/verify", { withCredentials: true })
+        .get(`${import.meta.env.VITE_API_URL}/verify`, { withCredentials: true })
         .then((res) => {
           if (res.data.status) {
             if (res.data.user.role === "recruiter") {
@@ -47,7 +47,7 @@ const Login = () => {
         const { name, password } = formData;
 
           try {
-            const result = await axios.post("http://localhost:5000/login", {
+            const result = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
               name,
               password,
             });

@@ -6,7 +6,7 @@ const PrivateRoute = ({ children, allowedRoles }) => {
   const [auth, setAuth] = useState({ status: null, role: null });
 
   useEffect(() => {
-    axios.get("http://localhost:5000/verify", { withCredentials: true })
+    axios.get(`${import.meta.env.VITE_API_URL}/verify`, { withCredentials: true })
       .then(res => {
         if (res.data.status) {
           setAuth({ status: true, role: res.data.user.role });
