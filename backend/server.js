@@ -13,7 +13,7 @@ ConnectDB();
 
 const app = express();
 app.use(cors({
-    origin: ["http://localhost:5173"], // Allow requests from this origin
+    origin: ["https://linkedin-clone-frontend-ten.vercel.app"], // Allow requests from this origin
     methods: ["GET", "POST"],
     credentials: true // Allow cookies to be sent with requests
 }));
