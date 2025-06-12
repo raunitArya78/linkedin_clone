@@ -5,6 +5,8 @@ import axios from "axios";
 const PrivateRoute = ({ children, allowedRoles }) => {
   const [auth, setAuth] = useState({ status: null, role: null });
 
+  axios.defaults.withCredentials = true;
+
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/verify`, { withCredentials: true })
       .then(res => {

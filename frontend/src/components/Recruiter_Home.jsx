@@ -40,9 +40,11 @@ const RecruiterHome = () => {
 
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
+
   useEffect(() => {
     axios.defaults.withCredentials = true;
-    axios.get(`${import.meta.env.VITE_API_URL}/verify`)
+    axios.get(`${import.meta.env.VITE_API_URL}/verify`, { withCredentials: true })
       .then((res) => {
         if (res.data.status) {
           setUsername(res.data.user.name);

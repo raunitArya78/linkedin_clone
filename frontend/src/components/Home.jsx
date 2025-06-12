@@ -45,6 +45,8 @@ const Home = () => {
 
     const navigate = useNavigate();
 
+    axios.defaults.withCredentials = true; // Ensure cookies are sent with requests
+
     const handleLogout = async () => {
       try {
         await axios.get(`${import.meta.env.VITE_API_URL}/logout`, {
@@ -64,7 +66,7 @@ const Home = () => {
 
     useEffect(() => {
     axios.defaults.withCredentials = true; // ensure cookies are sent
-    axios.get(`${import.meta.env.VITE_API_URL}/verify`)
+    axios.get(`${import.meta.env.VITE_API_URL}/verify`, {withCredentials: true})
       .then((res) => {
         if (res.data.status) {
           setUsername(res.data.user.name); // 👈 Store name in state
