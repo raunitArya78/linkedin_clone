@@ -17,6 +17,9 @@ A LinkedIn-inspired social networking web application built with the MERN stack.
 - Comments and social interactions
 - Responsive UI
 
+## Demo
+https://linkedin-clone-frontend-ten.vercel.app/
+
 ## Getting Started
 
 ### Prerequisites
