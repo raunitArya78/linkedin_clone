@@ -22,10 +22,12 @@ const Signup = () => {
         }));
     };
 
+    axios.defaults.withCredentials = true; // Ensure cookies are sent with requests
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const { name, email, password, role } = formData;
-        axios.post(`${import.meta.env.VITE_API_URL}/register`, { name, email, password, role })
+        axios.post(`${import.meta.env.VITE_API_URL}/register`, { name, email, password, role }, { withCredentials: true })
             .then(result => {
                 console.log(result);
                 navigate('/login');

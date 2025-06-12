@@ -15,7 +15,8 @@ const app = express();
 app.use(cors({
     origin: ["https://linkedin-clone-frontend-ten.vercel.app"], // Allow requests from this origin
     methods: ["GET", "POST"],
-    credentials: true // Allow cookies to be sent with requests
+    credentials: true, // Allow cookies to be sent with requests
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 app.use(cookieParser());
