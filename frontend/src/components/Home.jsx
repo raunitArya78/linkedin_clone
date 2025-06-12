@@ -53,6 +53,7 @@ const Home = () => {
           withCredentials: true,
         });
         setShowSignoutAlert(true);
+        setUsername(""); // Clear username on logout
         setTimeout(() => {
           setShowSignoutAlert(false);
           navigate("/login");

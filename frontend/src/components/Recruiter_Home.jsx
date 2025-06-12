@@ -61,6 +61,7 @@ const RecruiterHome = () => {
         withCredentials: true,
       });
       setShowSignoutAlert(true);
+      setUsername("");
       setTimeout(() => {
         setShowSignoutAlert(false);
         navigate("/login");
