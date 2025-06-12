@@ -49,7 +49,11 @@ app.post("/login", async (req, res) => {
       { expiresIn: '1h' }
     );
 
-    res.cookie('token', token, { httpOnly: true });
+    res.cookie('token', token, 
+      { httpOnly: true,
+        secure: true,
+        sameSite: 'None' 
+       });
     res.json({ message: 'Login successful', role: user.role });
   } catch (err) {
     console.log(err);
